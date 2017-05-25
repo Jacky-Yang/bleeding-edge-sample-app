@@ -7,6 +7,9 @@ var Sparkline = require('./sparkline');
 var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 var formatDate = function (date) {
+  if (typeof date === 'string') {
+    date = new Date(date);
+  }
   return MONTHS[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 };
 
